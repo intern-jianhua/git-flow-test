@@ -23,6 +23,13 @@ jobs:
         run: |
           sudo apt-get update
           sudo apt-get install git-flow
+      - name: prepare branches
+        run: |
+          git checkout develop
+          git pull --rebase origin develop
+          git checkout master
+          git pull --rebase origin master
+          git checkout develop
       - name: git-flow init
         run: |
           git flow init -d
