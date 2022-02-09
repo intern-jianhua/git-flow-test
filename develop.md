@@ -1,3 +1,6 @@
 - add feature/xxx1
 - add feature/xxx2
-- add buffix/xxx1
+- add bugfix/xxx1
+- add bugfix/xxx2
+- add feature/xxx3
+- add feature/xxx4
