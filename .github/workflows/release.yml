@@ -17,8 +17,8 @@ jobs:
         uses: actions/checkout@v2
       - name: set git config
         run: |
-          git config --global user.email Github_Action_Release
-          git config --global user.name noreply@github.com
+          git config user.email Github_Action_Release
+          git config user.name noreply@github.com
       - name: Install git-flow
         run: |
           sudo apt-get update
@@ -27,7 +27,7 @@ jobs:
         run: |
           git checkout develop
           git pull --rebase origin develop
-          git checkout master
+          git checkout -b master
           git pull --rebase origin master
           git checkout develop
       - name: git-flow init
