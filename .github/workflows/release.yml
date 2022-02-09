@@ -33,12 +33,10 @@ jobs:
       - name: git-flow init
         run: |
           git flow init -d
-      - name: set VERSION
+      - name: git-flow release
         run: |
           export VERSION=`cat VERSION | awk -F. -v OFS=. 'NF==1{print ++$NF}; NF>1{if(length($NF+1)>length($NF))$(NF-1)++; $NF=sprintf("%0*d", length($NF), ($NF+1)%(10^length($NF))); print}'`
           echo $VERSION
-      - name: git-flow release
-        run: |
           git flow release start $VERSION
           echo -n $VERSION > VERSION
           git add VERSION
