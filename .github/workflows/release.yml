@@ -25,11 +25,7 @@ jobs:
           sudo apt-get install git-flow
       - name: prepare branches
         run: |
-          git fetch
-          git checkout develop
-          git pull --rebase origin develop
-          git checkout master
-          git pull --rebase origin master
+          git checkout -b master origin/master
           git checkout develop
       - name: git-flow init
         run: |
